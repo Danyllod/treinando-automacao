@@ -34,11 +34,14 @@ while not button_stop:
             button_found = find_and_click_button(image)
             if not button_found:
                 print(f"Botão com a imagem {image} não encontrado. Tentando novamente...")
-                time.sleep(15)  # Espera um segundo antes de tentar novamente
+                time.sleep(60)  # Espera um segundo antes de tentar novamente
+                if keyboard.is_pressed('s'):
+                    break  
             
         if image == "botao.png":
-            time.sleep(80)   
-    if keyboard.is_pressed('s'):
-        break        
+            time.sleep(1000)   
+        if keyboard.is_pressed('s'):
+            button_stop = True
+            break        
         
 print("Sequência de cliques concluída.")
